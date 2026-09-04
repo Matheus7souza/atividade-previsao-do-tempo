@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previsão do Tempo - BrasilAPI</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/index.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Consulta de Previsão do Tempo</h1>
+        
+        <div class="search-box">
+            <label for="input-cidade">Digite o nome da cidade:</label>
+            <input type="text" id="input-cidade" placeholder="Ex: Jacareí, São Paulo..." autofocus>
+        </div>
+
+        <div id="status-mensagem" class="hidden"></div>
+
+        <div class="content-grid">
+            <section class="card">
+                <h2>Cidades Encontradas</h2>
+                <ul id="lista-cidades"></ul>
+            </section>
+
+            <section class="card">
+                <h2>Previsão do Tempo</h2>
+                <div id="resultado-previsao">
+                    <p class="placeholder-texto">Selecione uma cidade ao lado para ver a previsão.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
