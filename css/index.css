@@ -1,142 +1,83 @@
-* {
-    margin: 0;
-    padding: 0;
+*{
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f7f6;
-    color: #333;
-    padding: 20px;
+
+body{
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: rgb(106, 184, 184);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.container {
-    max-width: 700px;
-    margin: 0 auto;
-    background: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    text-align: center;
-    margin-bottom: 25px;
-    color: #2c3e50;
-}
-
-.search-box {
-    margin-bottom: 20px;
+main{
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    width: min(100%,40rem);
 }
 
-.search-box label {
-    font-weight: bold;
-    color: #555;
+section{
+    width: 100%;
+    padding: 1.5rem;
+    background-color: rgb(235, 229, 215);
+    border: 1px solid rgb(250, 223, 150);
+    border-radius: 1rem;
+    box-shadow: 0 1.5rem 4rem rgb(22, 76, 80);
 }
 
-.search-box input {
-    padding: 12px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    outline: none;
-    transition: border-color 0.3s;
+h1{ 
+    margin: 0.5rem;
 }
 
-.search-box input:focus {
-    border-color: #3498db;
+.painel-cidade {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border: 1px solid #9c9c9c;
+    background: none;
+    font-size: 1rem;      /* Tamanho de texto comum */
+    text-align: left;     /* Alinha o texto à esquerda */
+    cursor: pointer; 
 }
 
-#status-mensagem {
-    margin-bottom: 20px;
-    padding: 10px;
-    background-color: #e8f4fd;
-    color: #2980b9;
-    border-left: 4px solid #3498db;
-    border-radius: 4px;
-    font-weight: bold;
+.painel-cidade:hover{
+    background-color: #9c9c9c ;
 }
 
-.hidden {
-    display: none;
+/* Container principal: centraliza perfeitamente o label com o input na horizontal */
+.painel-selecao {
+  display: flex;
+  align-items: center; 
+  gap: 0.625rem;
 }
 
-/* Modificado para empilhar os blocos verticalmente (um embaixo do outro) */
-.content-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+/* Container do input: apenas define a posição para o span se basear */
+.input-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
-.card {
-    background: #fafafa;
-    border: 1px solid #e1e1e1;
-    border-radius: 6px;
-    padding: 20px;
+/* Campo de texto limpo, sem nenhuma margem que desalinhe do label */
+#cidade {
+  padding: 0.375rem 0.625rem;
+  border: 0.0625rem solid #000;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  margin: 0; 
 }
 
-.card h2 {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    color: #34495e;
-    border-bottom: 2px solid #ecf0f1;
-    padding-bottom: 8px;
-}
-
-#lista-cidades {
-    list-style: none;
-    max-height: 220px;
-    overflow-y: auto;
-}
-
-#lista-cidades li {
-    padding: 10px 12px;
-    margin-bottom: 8px;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.1s;
-}
-
-#lista-cidades li:hover {
-    background: #eef2f3;
-    border-color: #bdc3c7;
-}
-
-.placeholder-texto {
-    color: #888;
-    font-style: italic;
-}
-
-.previsao-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.previsao-item {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 12px;
-}
-
-.previsao-item h3 {
-    font-size: 1rem;
-    color: #2c3e50;
-    margin-bottom: 6px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 4px;
-}
-
-.previsao-item p {
-    font-size: 0.9rem;
-    margin: 4px 0;
-    color: #555;
+/* O span fica abaixo do input sem empurrar nada para os lados ou para cima */
+.buscando {
+  position: absolute;
+  top: 100%;       /* Começa exatamente onde o input termina embaixo */
+  margin-top: 0.25rem; /* Cria um espacinho sutil de 4px entre o input e o texto */
+  left: 0;
+  font-size: 0.75rem;
+  color: #757575;
+  white-space: nowrap;
 }
