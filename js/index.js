@@ -27,7 +27,7 @@ async function testar(evento) {
 }
 async function cliqueBotao(evento) {
   let id = evento.target.getAttribute('data-id');
-  let resposta = await fetch(`https:brasilapi.com.br/api/cptec/v1/clima/previsao/${id}`,);
+  let resposta = await fetch(`https://brasilapi.com.br/api/cptec/v1/clima/previsao/${id}`,);
   let dados = await resposta.json();
   elementoPrevisao.innerHTML = "";
   for (let i = 0; i < dados.clima.length; i = i + 1) {
